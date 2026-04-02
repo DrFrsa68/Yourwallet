@@ -1,0 +1,42 @@
+const jazdan = {
+  primary: '#1C1033',
+  secondary: '#2E1F55',
+  gold: '#C9A84C',
+  background: '#F5F3EF',
+  white: '#FFFFFF',
+  danger: '#E05C3A',
+  success: '#1D9E75',
+  text: '#1A1A1A',
+  textMuted: '#888780',
+};
+
+export const Colors = {
+  light: {
+    primary: jazdan.primary,
+    secondary: jazdan.secondary,
+    gold: jazdan.gold,
+    background: jazdan.background,
+    card: jazdan.white,
+    text: jazdan.text,
+    textMuted: jazdan.textMuted,
+    danger: jazdan.danger,
+    success: jazdan.success,
+    tint: jazdan.gold,
+    tabIconDefault: jazdan.textMuted,
+    tabIconSelected: jazdan.gold,
+  },
+  dark: {
+    primary: jazdan.primary,
+    secondary: jazdan.secondary,
+    gold: jazdan.gold,
+    background: jazdan.primary,
+    card: jazdan.secondary,
+    text: jazdan.white,
+    textMuted: '#B4B2A9',
+    danger: jazdan.danger,
+    success: jazdan.success,
+    tint: jazdan.gold,
+    tabIconDefault: '#B4B2A9',
+    tabIconSelected: jazdan.gold,
+  },
+};
