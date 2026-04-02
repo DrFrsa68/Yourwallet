@@ -2,7 +2,7 @@ FROM alpine:latest
 
 ARG PB_VERSION=0.22.0
 
-RUN apk add --no-cache unzip ca-certificates wget
+RUN apk add --no-cache unzip ca-certificates wget bash
 
 RUN wget https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip \
     && unzip pocketbase_${PB_VERSION}_linux_amd64.zip \
@@ -11,6 +11,7 @@ RUN wget https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSIO
 
 RUN mkdir -p /pb/pb_data
 
-EXPOSE 8080
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
-ENTRYPOINT ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:8080", "--dir=/pb/pb_data"]
+ENTRYPOINT ["/start.sh"]
