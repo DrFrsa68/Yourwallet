@@ -13,4 +13,4 @@ RUN mkdir -p /pb/pb_data
 
 EXPOSE 8090
 
-CMD ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:8090", "--dir=/pb/pb_data"]
+CMD sh -c "/usr/local/bin/pocketbase serve --http=0.0.0.0:${PORT:-8090} --dir=/pb/pb_data"

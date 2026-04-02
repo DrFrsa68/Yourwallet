@@ -1,20 +1,19 @@
 import { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { useAuthStore } from '../store/authStore';
-import { router } from 'expo-router';
 import { pb } from '../lib/pb';
+import { router } from 'expo-router';
 
 export default function RootLayout() {
-  const { isLoggedIn, user } = useAuthStore();
-
   useEffect(() => {
-    // تحقق من حالة تسجيل الدخول عند فتح التطبيق
-    if (pb.authStore.isValid) {
-      router.replace('/(tabs)');
-    } else {
-      router.replace('/(auth)/login');
-    }
+    const timer = setTimeout(() => {
+      if (pb.authStore.isValid) {
+        router.replace('/(tabs)');
+      } else {
+        router.replace('/(auth)/login');
+      }
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
