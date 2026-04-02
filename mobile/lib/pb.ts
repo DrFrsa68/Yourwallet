@@ -11,7 +11,7 @@ const store = new AsyncAuthStore({
 });
 
 export const pb = new PocketBase(
-  'https://your-app.up.railway.app', // ← راح نغير هذا لاحقاً
+  'https://yourwallet-production.up.railway.app', // ← راح نغير هذا لاحقاً
   store
 );
 
