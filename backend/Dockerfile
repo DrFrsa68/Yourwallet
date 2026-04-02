@@ -11,6 +11,6 @@ RUN wget https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSIO
 
 RUN mkdir -p /pb/pb_data
 
-EXPOSE 8090
+EXPOSE 8080
 
-ENTRYPOINT ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:8090", "--dir=/pb/pb_data"]
+ENTRYPOINT ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:8080", "--dir=/pb/pb_data"]
